@@ -1,0 +1,44 @@
+html,body{height:100%;}
+body{font-family: 微软雅黑;color:#878787;font-size: 16px;}
+
+
+
+#fullscreenbtn{position: fixed;width: 40px; height: 40px; background: greenyellow;color: #fff;font-size: 36px;
+    text-align: center;line-height: 40px;top: 8px;right: 8px;z-index: 20;}
+.toolbar{float:left;width:50px;height: 100%;background: lightpink;}
+.slider{float:left;width:300px;height: 100%;background: lightyellow;}
+.contentbox{width: 100%;background:#ccc;position:fixed;top:0;left:0;height:100%;margin-left:350px;}
+@media only screen and (min-width: 992px){
+    .slider{width:300px;}
+}
+
+@media only screen and (max-width: 992px){
+    .slider{width:300px;}
+}
+
+
+.search{height: 100px;width: 100%;background: lightgoldenrodyellow;}
+.box{width: 100%;background: lightcyan;overflow: hidden;}
+.slider h3{text-align: center;}
+.box {overflow-y: auto;}
+.box .accordion .item{text-align: left;border: 2px solid #fff;    border-radius: 10px;overflow: hidden;}
+.box .accordion .item > div{position:relative;height: 120px;text-align: center;line-height: 100px;background: #fff;}
+.box .accordion .item > div .divider{position:absolute;left:10%; top: -2px; height: 0;border-top: 1px solid #878787;
+    width: 80%;}
+.box .accordion .item .submenu li:not(:first-child){border-top: 1px solid rgba(43, 181, 92, 0.9);}
+.box .accordion .item .submenu li a{display:block;padding:15px 30px;font-size: 16px;color: #878787;}
+
+
+
+/*hover*/
+.box .accordion .item:hover > div{opacity:0.9;background: rgba(43, 181, 92, 0.9);color: #fff;}
+.box .accordion .item:hover{border-color:rgba(43, 181, 92, 0.9)}
+.box .accordion .item:hover .submenu li:not(:first-child){border-color:rgba(43, 181, 92, 0.9)}
+
+.box .accordion li.active{border-color: #d9d9d9;}
+.box .accordion li.active .submenu li:not(:first-child){border-top: 1px solid #d9d9d9;}
+
+
+
+
+
