@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+.box{float:left; border:50px solid transparent; border-bottom-color:#f00;}
+.box2{width:300px; height:300px; margin:50px auto; box-shadow:2px 2px 10px #999;}
+.box3{width:300px; height:300px; margin:50px auto; border:1px solid red; outline:2px solid #3CF; outline-offset:10px;border-radius:20px;box-shadow: 0px 0px 0px 28px #fff,0px 0px 10px 30px #999; }
+.box4{width:400px; height:200px; background:red; margin:20px auto;border-radius:50px 0px/50px 80px;}
+
+.box5{width:270px; height:270px; border-bottom-width:30px; border-image-source:}
+.box6{width:400px; height:400px; margin:50px auto; background: linear-gradient(45deg,#FC0, red 46%,blue 45%,blue 55%,green 54%,yellow)}
+.box7{width:300px; height:300px; margin:20px auto; background: -webkit-radial-gradient(40px 50px,red,blue,green) }
+
+.box8{width:100px; height:100px; margin:10px auto;position:relative;}
+.box8:after{content:"";width:20px;height:100px; background:red;position:absolute;top:0;left:40px; z-index:-1;}
+.box8:before{content:"";width:100px;height:20px; background:red;position:absolute;top:40px;left:0px;}
+</style>
+</head>
+
+<body>
+<!----
+	盒子阴影 box-shadow ； x偏移  y偏移  blur羽化值  颜色
+    		 box-shadow    x偏移  y偏移  blur羽化值 偏移盒子外 颜色
+
+    轮廓线  ；outline     轮廓线偏移  outline-offset;
+ 
+ 	边框圆角  
+    	border-radius:20px;  上下左右
+    	border-radius:20px 50px;  左上右下   右上左下
+        border-radius:20px 50px 30px ; 左上   右上左下  右下
+        border-radius:20px 50px 40px 60px;   左上  右上  右下   左下
+        
+        border-radius:30px/80px;  X轴/Y轴
+          
+     边框图片
+     
+     渐变
+     线型渐变  -webkit-linear-gradient(45deg,#FC0, red 46%,blue 45%,blue 55%,green 54%,yellow)
+     径向渐变  -webkit-radial-gradient(40px 50px,red,blue,green)
+     
+    
+---->
+<div class="box">border</div>
+<div class="box2">box-shadow</div>
+
+<div class="box3">多重边框线</div>
+<div class="box4">圆角</div>
+
+<div class="box6"> 线型渐变</div>
+
+<div class="box7">径向渐变</div>
+<div class="box8">伪类 :after :before</div>
+
+
+</body>
+</html>

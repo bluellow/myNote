@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0;}
+.wrap{width:1200px; overflow:hidden;margin:0 auto;}
+.wrap .header{height:100px; background:#9CF}
+.wrap .content{height:300px; display:flex;}
+.wrap .content .left{flex:1;background:red;}
+.wrap .content .middle{flex:4;background:yellow;}
+.wrap .content .right{flex:1;background:green;}
+
+@media screen and (max-width:1200px){
+.wrap{width:100%;}	
+	
+	}
+@media screen and (max-width:1024px) and (min-width:768px){
+	.wrap .content{ display:block;overflow:hidden;height:100%; }
+	.wrap .content .left{width:30%;height:300px;float:left;}
+	.wrap .content .middle{width:70%; height:300px;float:right}
+	.wrap .content .right{width:100%; height:100px;clear:both;}
+
+	}	
+@media screen and (max-width:767px) and (min-width:320px){
+	.wrap .content{  display:flex;overflow:hidden;height:100%; flex-direction:column;}
+	.wrap .content .left{flex:2;height:300px;}
+	.wrap .content .middle{flex:4;height:300px;}
+	.wrap .content .right{flex:2; height:100px;}
+
+	}	
+
+
+
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+	<div class="header"></div>
+    <div class="content">
+    	<div class="left"></div>
+        <div class="middle"></div>
+        <div class="right"></div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

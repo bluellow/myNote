@@ -2,10 +2,9 @@
  * Created by Administrator on 2017/3/27.
  */
 $(document).ready(function(){
-
     var accordionColorNameArr = [""];
     //加载目录
-    $.getJSON("catalog.json",function(data){
+    $.getJSON("data/catalog.json",function(data){
         // 初始化
         var content = data.content;
         var $accordion = $("#accordion");
@@ -50,13 +49,20 @@ $(document).ready(function(){
         showexam(this);
     })
 
-
+    var isToolbarHidden = false
     $("#fullscreenbtn").click(function(){
-        var toolbarWidth = parseInt($(".toolbar").css("width"))
-        var sliderWidth = parseInt($(".slider").css("width"))
+        if(!isToolbarHidden){
+            isToolbarHidden = !isToolbarHidden;
+            var toolbarWidth = parseInt($(".toolbar").css("width"))
+            var sliderWidth = parseInt($(".slider").css("width"))
+            $(".toolbar").animate({"marginLeft":-(350)+ "px"},"slow");
+        }else{
+            isToolbarHidden = !isToolbarHidden;
+            var toolbarWidth = parseInt($(".toolbar").css("width"))
+            var sliderWidth = parseInt($(".slider").css("width"))
+            $(".toolbar").animate({"marginLeft":0+ "px"},"slow");
+        }
 
-
-        $(".slider").animate({"marginLeft":-(toolbarWidth+sliderWidth) + "px"},"slow");
 
     })
 });
