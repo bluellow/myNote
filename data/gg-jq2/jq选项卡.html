@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jq选择器</title>
+<style>
+*{ margin:0; padding:0}
+li{ list-style:none}
+
+
+.tab1 li{ float:left; width:100px; height:30px; line-height:30px; text-align:center; background: #CCC}
+.tab1 li.hover{ background:
+#fff}
+.tab2{ clear:both; overflow:hidden; width:300px}
+.tab2 li{ display:none;float:left; width:300px}
+.tab2 li.hover{ display:block;}
+</style>
+</head>
+
+<body>
+点击
+选项卡特点
+1.选项卡
+2.有内容
+3.点击选项卡 出现相对的内容
+<ul class='tab1'>
+	<li class="hover">HTML</li>
+	<li>PHP</li>
+	<li>JAVA</li>
+</ul>
+<ul class='tab2'>
+	<li class="hover">HTML:超文本标记语言</li>
+	<li>PHP（外文名:PHP: Hypertext Preprocessor，中文名：“超文本预处理器”）是一种通用开源脚本语言。</li>
+	<li>Java是一门面向对象编程语言，不仅吸收了C++语言的各种优点，还摒弃了C++里难以理解的多继承、指针等概念，因此Java语言具有功能强大和简单易用两个特征。</li>
+</ul>
+
+<script type="text/javascript" src="jquery-1.9.0.js"></script>
+<script>
+//1.什么元素触发
+//$('.tab1 li')
+//2.触发什么事件 点击
+//$('.tab1 li').click();
+//3.点击后 怎么办？ 显示选项卡对应的内容 
+//4.怎么找到对应内容?  通过当前选项卡是第几个选项卡 找到第几个内容
+//5.之前显示的选项卡隐藏
+$(function(){
+	$('.tab1 li').click(function(){
+		//alert(1123);
+		
+		$(this).addClass('hover');
+		$(this).siblings().removeClass('hover');
+		
+		//$(this).addClass('hover').siblings().removeClass('hover');
+		//要找到选项卡 相对应的内容
+		var index = $(this).index();
+		//alert(index)
+		var content_li = $('.tab2 li').eq(index);
+		//content_li.addClass('hover').siblings().removeClass('hover');
+		content_li.slideDown(600);
+		content_li.siblings().slideUp(300);
+	});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>正则表达式</title>
+</head>
+<body>
+<script type="text/javascript">
+
+function log(str){
+	console.log(str);
+}
+
+//示例1：验证码（支持字母、数字的组合，4个字符）
+var str = "us8a";
+var str1 = "us8aff";
+var reg = /^[0-9A-Za-z]{4}$/;
+var result = reg.exec(str);
+log(result);
+
+//示例2：手机号码
+//电信：189 181 180 153 133 177
+//联通：186 185 156 131 130 155 132 176 145
+//移动：134 135 136 137 138 139 150 151 152 157 158 159 182 183 188 147
+//虚拟运营商：170 171
+var str = "13250736716";
+var str = "17711111111";
+var str = "15511111111";
+var reg = /^(13[0-9]|13[57]|15[012356789]|18[01235689]|17[017])[0-9]{8}$/;
+var result = reg.exec(str);
+log(result);
+
+//示例3：邮箱
+var str = "2355925860@qq.com";
+var str = "dodi@163.com";
+var str = "dodi@163.com";
+var str = "dodi888@163.com.cn";
+var reg = /^[a-zA-Z][a-zA-Z0-9_]{5,17}@[a-zA-Z0-9_]{1,}(.[a-zA-Z0-9_]{1,}){1,}$/;
+var result = reg.exec(str);
+log(result);
+//示例3：密码 （不能纯数字的，6-20个字符）
+var str = "us8a";
+// /^[0-9]{6-20}$/
+var reg = /^([0-9](?![0-9]{0,}$)|[A-Za-z\-_])[A-Za-z0-9\-_]{3,19}$/;;
+var result = reg.exec(str);
+
+//示例4：用户名（支持中文、字母、数字、“-”“_”的组合，4-20个字符）
+//// http://www.qqxiuzi.cn/bianma/zifuji.php
+///\u·Unicode编码 使用
+//[\u4E00-\u9FA5] 所有汉字范围
+var str = "admin";
+// var reg = /^\u·Unicode编码·[A-Z][A-Z0-9]{5}$/;
+// var reg = /^粤[A-Z][a-zA-Z0-9]{5}$/
+// var reg = /^\u7ca4[A-Z][A-Z0-9]{5}$/;
+var reg = /^([0-9](?![0-9]*$){4-20})|([A-Za-z0-9\u4E00-\u9FA5]{4-20})*$/;
+// var reg = /^[\u4E00-\u9FA5][A-Z][A-Z0-9]{5}$/;
+var reg = /^(\d(?!\d*$)|[A-z])[A-z0-9]*$/;
+// ?!n	匹配任何其后没有紧接指定字符串 n 的字符串。
+var reg = /^([0-9](?![0-9]{0,}$)|[A-z])[A-z0-9]*$/;
+var reg = /^([0-9](?![0-9]{0,}$)|[A-Za-z\-_\u4E00-\u9FA5])[A-Za-z0-9\-_\u4E00-\u9FA5]{3,19}$/;
+// var reg = /^&#31908[A-Z][A-Z0-9]{5}$/;
+var result = reg.exec(str);
+
+
+log('----------------');
+log('-----------=='+reg.exec('-----------'));
+log('_______=='+reg.exec('_______'));
+log('4234234=='+reg.exec('4234234'));
+log('5435fff4234444444444=='+reg.exec('5435fff4234444444444'));
+log('5435fff42344444444444=='+reg.exec('5435fff42344444444444'));
+log('A大大大A大大大A大大大A大大大A大大大=='+reg.exec('A大大大A大大大A大大大A大大大A大大大'));
+log('A大大大A大大大A大大大A大大大A大大大1=='+reg.exec('A大大大A大大大A大大大A大大大A大大大1'));
+log('阿萨德阿=='+reg.exec('阿萨德阿'));
+log('----------------');
+
+</script>
+</body>
+</html>

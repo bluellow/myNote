@@ -1,0 +1,18 @@
+.content{padding-top: 24px; margin-bottom: 62px;}
+.content .div{padding-top: 12px; overflow: hidden; font-family:"微软雅黑"; width: 961px;}
+.content h1{font-size:24px; color: #010101; font-weight: normal; line-height: 84px; padding-left: 30px; }
+
+.content .pro{padding-top: 42px; padding-left: 30px;}
+.content .pro a{display: block; overflow: hidden;}
+.content .pro .pic{margin-left: 20px; float: left;}
+.content .pro .pic img{display: block;}
+.content .pro .pro-title{padding-left: 22px; overflow: hidden; padding-top: 18px; float: left; width: 402px; text-overflow: ellipsis;}
+.content .pro .pro-title a{font-size:16px;  font-family:"微软雅黑"; color:#000; font-weight: bold;}
+.content .pro span{font-size: 26px; line-height: 114px;}
+.content .comment h1{font-size: 26px;}
+.content .comment textarea{width: 930px; height: 345px; resize: none; padding: 0 5px;}
+.content .comment .btn{float:left; margin-left: 14px; margin-top:5px; background: #ccc; border:none; color: #333; font-family: "微软雅黑"; text-align: center; line-height: 30px; font-size: 18px; width: 125px;} 
+.content .comment .rate{float:right; } 
+.content .comment .rate span{font-size: 20px; font-family:"微软雅黑";} 
+.content .comment .rate a{display: inline-block; width: 22px; height: 22px; background: url(../images/png/starcheck.png) no-repeat center; vertical-align: middle; margin-top:-11px;}
+.content .comment .rate .rate-btn{margin-right: 30px; margin-left: 5px; line-height: 43px; width: 156px; background: #7a14e2; color: #fff; text-align: center; border:none; font-size: 24px; font-family: "微软雅黑";}

@@ -1,0 +1,80 @@
+.content{padding-top: 24px; margin-bottom: 100px;}
+.content .div{padding-top: 12px; overflow: hidden; font-family:"微软雅黑";}
+
+.content .my-order{padding-top: 26px; margin-bottom: 36px;}
+.content .my-order .order-header{border: 1px solid #cccccc; overflow: hidden;}
+.content .my-order .order-header li{font-weight:bold; display: block; float: left; font-size: 14px; text-align: center; box-sizing: border-box; line-height: 47px;}
+.content .my-order .order-header li:nth-child(1){text-align:left; width: 407px; padding-left: 56px; }
+.content .my-order .order-header li:nth-child(2){width: 182px;}
+.content .my-order .order-header li:nth-child(3){width: 116px;}
+.content .my-order .order-header li:nth-child(4){width: 116px;}
+.content .my-order .order-header li:nth-child(5){width: 116px;}
+
+
+.content .my-order .list-top{padding-left:30px; margin-top:10px; height: 38px; background: #ccc;}
+.content .my-order .list-top a{display: block; float: right; background: url(../images/png/rabbinc.png) no-repeat center; width: 13px; height: 38px; margin-right: 17px;}
+.content .my-order .list-top .span{font-size: 14px; margin-left: 50px;}
+.content .my-order .order-body label.icheck{cursor: pointer; font-size: 14px; position: relative; width: 100%; text-align: left; padding-top: 6px; position: relative;}
+.content .my-order .order-body .icheck input{visibility: hidden; }
+.content .my-order .order-body .icheck span{width: 10px; height: 10px; display: block; border: 1px solid #000; float: left; position: absolute; top: 10px;}
+.content .my-order .order-body label.icheck input:checked + span:after{content:""; display: block; width: 6px; height: 4px; border-left: 2px solid #000; border-bottom: 2px solid #000; transform: rotate(-45deg); position:absolute; top: 1px; left: 1px;}
+.content .my-order .order-body label.icheck p{display: inline-block; font-size: 14px; line-height: 39px; font-weight: bold;}
+.content .my-order .order-body .order-details{border: 1px solid #cccccc;height: 119px; box-sizing: border-box;}
+.content .my-order .order-body .order-details>div{padding-top:18px; height: 119px; float: left; text-align: center;box-sizing: border-box;}
+.content .my-order .order-body .order-details>div:nth-child(1){padding-left: 30px;text-align:left; width: 407px;}
+.content .my-order .order-body .order-details>div:nth-child(2){width: 182px;}
+.content .my-order .order-body .order-details>div:nth-child(3){width: 116px;}
+.content .my-order .order-body .order-details>div:nth-child(4){width: 116px;}
+.content .my-order .order-body .order-details>div:nth-child(5){width: 116px;}
+.content .my-order .order-body .order-details>div p{font-weight: normal; font-size:12px; line-height: 12px; padding-bottom: 7px;}
+.content .my-order .order-body .order-details>div a{font-weight: normal; font-size:12px; display: block; line-height: 30px; color:#000;}
+.content .my-order .order-body .order-details div .pic{display: block; float: left; border: 2px solid #999; height: 75px;}
+.content .my-order .order-body .order-details div .pro-title{overflow: hidden; text-overflow: ellipsis; padding-left: 10px;}
+.content .my-order .order-body .order-details div .pro-title a{font-size:12px; font-family:"微软雅黑"; color:#000; font-weight: bold; display: block; line-height: 22px;}
+.content .my-order .order-body .order-details div p.price{color:#ff0000; font-size:16px; padding-bottom: 14px;}
+.content .my-order .order-body .order-details div p.express{color:#666666;}
+.content .my-order .order-body .order-details>div:nth-last-child(1) a:nth-child(1){margin-top:-9px;}
+.content .my-order .order-body .order-details div:nth-child(3){border-left: 1px solid #cccccc;}
+.content .my-order .order-body .order-details div:nth-child(4){border-left: 1px solid #cccccc;}
+.content .my-order .order-body .order-details div:nth-child(5){border-left: 1px solid #cccccc;}
+
+
+.content .user{margin-left: 45px; margin-bottom: 26px;}
+.content .user .user-img{width:184px; height: 117px; border-radius: 50%; text-align: center; margin-right: 28px;}
+.content .user .user-img .img{width:117px; height: 117px; border-radius: 50%; margin: 0 auto;}
+.content .user .user-img .username{color: #ff0000; font-size: 14px;}
+.content .user .user-message{overflow: hidden;}
+.content .user .user-message p{font-size: 16px; margin-bottom: 15px;}
+.content .user .user-message ul{width: 708px; overflow: ;}
+.content .user .user-message ul li{float: left; width: 188px;}
+.content .user .user-message ul li:nth-last-child(1){width: 140px;}
+.content .user .user-message ul li span{font-size: 14px;}
+.content .user .user-message ul li span.bottom{margin-top:24px; display: block;}
+.content .user .user-message ul li .level{margin-top:10px; font-size: 14px; width: 165px; height: 8px; box-sizing: border-box; border: 2px solid #ff7b00; border-radius: 4px;} 
+.content .user .user-message ul li .level-color{display: block; height: 4px; width: 90px; background: #ff9804;} 
+.content .user .user-message ul li a{display: block; height: 46px; line-height: 46px; color: #000; font-size: 14px;}
+.content .user .user-message ul li a.ph{background: url(../images/png/user-phone.png) no-repeat left; padding-left: 20px;}
+.content .user .user-message ul li a.em{background: url(../images/png/user-email.png) no-repeat left; padding-left: 28px;}
+.content .user .user-message ul li a.we{background: url(../images/png/user-wechat.png) no-repeat left; padding-left: 34px;}
+
+
+.content .order .head{line-height: 16px; border-left: 2px solid #ff0000;font-size: 16px; padding-left: 8px; margin-left: 2px;}
+.content .pro-collection{width: 940px; overflow: hidden; position: relative;}
+.content .pro-collection .box{width: 818px; overflow: hidden; margin: 0 auto; margin-top:30px;}
+.content .pro-collection .box ul li{float: left; margin: 0 13px; text-align: center; width: 137px;}
+.content .pro-collection .box ul li span{color: #cc0000; font-size:12px;}
+.content .pro-collection .box ul li>div{margin-bottom: 30px;}
+.content .pro-collection .box ul li>div img{display: block;}
+.content .pro-collection .box ul li>div a{display: block;}
+.content .pro-collection>a{position: absolute; top:50%; margin-top: -34px;}
+.content .pro-collection>a.sleft{left: 2px;}
+.content .pro-collection>a.sright{right: 0px;}
+
+
+
+
+
+
+
+
+

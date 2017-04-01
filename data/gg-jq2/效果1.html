@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>jq效果</title>
+<style>
+*{ margin:0; padding:0}
+div{ width:100px; height:100px; border:1px solid #0F0}
+.show{ display:none}
+</style>
+
+</head>
+
+<body>
+<input type="button" class="ishow" value="显示show" />
+<input type="button" class="ihide" value="隐藏hide" />
+
+<input type="button" class="fadeIn" value="显示fadeIn" />
+<input type="button" class="fadeOut" onClick="" value="隐藏fadeOut" />
+<input type="button" class="slideToggle" onClick="" value="显示隐藏slideToggle()" />
+<input type="button" class="animate" onClick="" value="动画animate" />
+
+<div class="show">show</div>
+
+<script type="text/javascript" src="jquery-1.9.0.js"></script>
+<script>
+$(document).ready(function() {
+    
+});
+$(function(){
+	$('.ishow').click(function(){
+		//alert(123)
+		//600 1000微秒 == 1秒 
+		$('.show').show(600);
+	});
+	$('.ihide').click(function(){
+		//alert(123)
+		$('.show').hide(600);
+	});
+	$('.fadeIn').click(function(){
+		//alert(123)
+		$('.show').fadeIn(6000);
+	});
+	$('.fadeOut').click(function(){
+		//alert(123)
+		$('.show').fadeOut(6000);
+	});
+	$('.slideToggle').click(function(){
+		//alert(123)
+		$('.show').slideToggle(6000);
+	});
+	$('.animate').click(function(){
+		//alert(123) 动画回调函数作用 动画执行完后 可以自动触发 进行下一步操作
+		$('.show').css({'display':'block','width':0,'height':0}).animate({'height':'300px','width':'300px','font-size':'50px'},6000,function(){
+			//alert('动画完成');	
+		});
+	});
+	
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+.header .logo,.header .search{float: left;}
+.header .logo a{display: block; margin-left:28px; margin-top:23px;}
+.header .center{margin-bottom: 30px;}
+.header .find{float: left; margin-left: 150px; margin-right: 114px;}
+.header .search{display: inline-block; border:3px solid #4d0398; margin-top:52px;}
+.header .search input{border: none; background: none;}
+.header .search .txt{width: 372px; line-height: 26px; padding: 5px; display: inline-block; font-size: 16px;}
+.header .search .btn{display: inline-block; color: #fff; width: 64px; line-height: 37px; background-color: #7a14e2; text-align: center; font-family: "微软雅黑"; font-size: 16px;}
+.header .key-word{padding-top: 4px;}
+.header .key-word li{float: left; padding-right: 22px;}
+.header .key-word li a{float: left; color: #929292; font-size: 16px; font-family: "微软雅黑"; }
+.header .key-word li a.active{color: #7a14e2;}
+.header .cart{display: inline-block;  float:left; position: relative;  border:3px solid #4d0398; margin-top:52px; width: 137px;}
+.header .shopcart{margin-top: 5px;width: 34px; height: 29px; background: url(../images/png/shopcart.png) no-repeat center; padding-left:10px;float:left;}
+.header .shopcart .badge{-moz-user-select:none; -ms-user-select:none; -webkit-user-select:none; user-select: none; margin-left:16px; margin-top: -3px; line-height:17px; display:block; width:18px; height: 18px; background: #ff66ff; border-radius: 50%; color: #fff; font-size: 12px; text-align: center;}
+.header .cart .cart-a{color: #000; font-size: 14px; font-family: "微软雅黑";  line-height: 37px; margin-left: 7px; padding-right:13px; border-right: 2px solid #000;}
+.header .cart .triggle{display: inline-block; width: 18px; height: 10px; background: url(../images/png/triggle.png) no-repeat center; cursor: pointer;}
+
+
+
+
+.header .nav{background: #7a14e2; font-family: "微软雅黑"; height: 50px;}
+.header .nav a{color: #fff; line-height: 50px; display: block;}
+.header .nav-menu{float: left;}
+.header .nav-menu>a{font-size: 26px; background: #4d0398; padding:0 64px;}
+.header .nav-menu>ul{position: absolute; display: none; z-index: 999;}
+.header .nav-menu>ul>li{overflow: hidden;background: #ecebed; width: 232px; cursor: pointer;}
+.header .nav-menu>ul>li:hover{background: #fff;}
+.header .nav-menu>ul>li span{display:inline-block; height: 50px;padding:0 22px; }
+.header .nav-menu ul>li span.left{width: 30px;}
+.header .nav-menu ul>li>a{display:block; line-height: 50px; font-size: 16px; color: #000; float:left; line-height: 50px;}
+.header .nav-menu ul>li:hover>a{color: #8b31e6;}
+.header .nav-menu ul>li span.right{width: 9px; background: url(../images/png/right.png) no-repeat center;}
+.header .nav-menu ul>li:hover span.right{background: url(../images/png/rightc.png) no-repeat center;}
+.header .nav-menu ul>li span.left-ring{background: url(../images/png/ring.png) no-repeat center;}
+.header .nav-menu ul>li:hover span.left-ring{background: url(../images/png/ringc.png) no-repeat center;}
+.header .nav-menu ul>li:hover span.left-necklace{background: url(../images/png/necklacec.png) no-repeat center;}
+.header .nav-menu ul>li span.left-necklace{background: url(../images/png/necklace.png) no-repeat center;}
+.header .nav-menu ul>li span.left-bracelet{background: url(../images/png/bracelet.png) no-repeat center;}
+.header .nav-menu ul>li:hover span.left-bracelet{background: url(../images/png/braceletc.png) no-repeat center;}
+.header .nav-menu ul>li span.left-earrings{background: url(../images/png/earrings.png) no-repeat center;}
+.header .nav-menu ul>li:hover span.left-earrings{background: url(../images/png/earringsc.png) no-repeat center;}
+.header .nav-menu ul>li span.left-bead{background: url(../images/png/bead.png) no-repeat center;}
+.header .nav-menu ul>li:hover span.left-bead{background: url(../images/png/beadc.png) no-repeat center;}
+.header .nav-menu ul>li span.left-diamonds{background: url(../images/png/diamonds.png) no-repeat center;}
+.header .nav-menu ul>li:hover span.left-diamonds{background: url(../images/png/diamondsc.png) no-repeat center;}
+
+.header .nav-menu>ul>li .nav-details{position: absolute; left: 232px; width: 387px; background: rgba(255,255,255,.7); display: none;}
+.header .nav-menu>ul>li:nth-last-child(1) .nav-details{bottom: 0px;}
+.header .nav-menu>ul>li:nth-last-child(2) .nav-details{bottom: 0px;}
+.header .nav-menu>ul>li:nth-last-child(3) .nav-details{bottom: 0px;}
+.header .nav-menu>ul>li .nav-details p{font-family: "微软雅黑"; font-size:18px; color: #000; line-height: 50px; padding: 0 18px; float: left;}
+.header .nav-menu>ul>li dl{overflow: hidden; padding-top:10px;}
+.header .nav-menu>ul>li .nav-details dl dd{float: left; padding-left: 12px;}
+.header .nav-menu>ul>li .nav-details dl dd a{font-family: "微软雅黑"; font-size:14px; color: #636262; line-height: 32px;}
+
+.header .nav .navigation ul li{float: left; display: inline-block;}
+.header .nav .navigation ul li>a{font-size: 20px; padding:0 34px;}
+.header .nav .navigation ul li>a:hover{background: #4d0398;}
+
+
+
+
+
+
+
+
+
+
+
+
+

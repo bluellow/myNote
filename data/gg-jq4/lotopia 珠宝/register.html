@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/register.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/register.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="top">
+				<div class="container">
+					<div class="left select_address">
+						<span>送至:</span>
+						<select>
+							<option>广州</option>
+							<option>深圳</option>
+							<option>广州</option>
+						</select>
+					</div>
+					<div class="right">
+						<p>您好！欢迎来到LOTOPA</p>
+						<ul class="index-enter">
+							<li><a href="login.html" class="line active">请登录</a></li>
+							<li><a href="register.html" class="line">免费注册</a></li>
+							<li><a href="###" class="line">我的收藏</a></li>
+							<li><a href="###" class="triggle">关注LOTOPA</a>
+								<dl>
+									<dd><a href="###">关注LOTOPA</a></dd>
+									<dd><a href="###">关注LOTOPA</a></dd>
+									<dd><a href="###">关注LOTOPA</a></dd>
+								</dl>
+							</li>
+							<li><a href="###" class="triggle">客户服务</a>
+								<dl>
+									<dd><a href="###">客户服务</a></dd>
+									<dd><a href="###">客户服务</a></dd>
+									<dd><a href="###">客户服务</a></dd>
+								</dl>
+							</li>
+							<li><a href="###" class="triggle">网站导航</a>
+								<dl>
+									<dd><a href="###">网站导航</a></dd>
+									<dd><a href="###">网站导航</a></dd>
+									<dd><a href="###">网站导航</a></dd>
+								</dl> 
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="center">
+				<div class="container ov">
+					<div class="logo">
+						<a href="index.html"><img src="images/png/logo.png" title="欢迎来到LOTOPA" alt="LOTOPA"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="container ov">
+				<div class="register">
+					<div class="title">
+						<h1>免费注册</h1>
+						<a href="register.html" class="login">会员登录</a>
+					</div>
+					<div class="box">
+						<h2>会员注册</h2>
+						<form action="login.html">
+							<div class="input-group">
+								<label for="userName">会员名</label>
+								<input type="text" placeholder="请输入会员名" onblur='userCheck(this.value)' id="userName"/>
+								<p id="userTip"></p>
+							</div>
+							<div class="input-group">
+								<label for="Emial">Email</label>
+								<input type="text" placeholder="请输入邮箱" onblur='emailCheck(this.value)' id="Email"/>
+								<p id="emailTip"></p>
+							</div>
+							<div class="input-group">
+								<label for="phone">手机</label>
+								<input type="text" placeholder="请输入手机号码" onblur='phoneCheck(this.value)' id='phone'/>
+								<p id="phoneTip"></p>
+							</div>
+							<div class="input-group">
+								<label for="password">设置密码</label>
+								<input type="password" id="password" placeholder="6-20位大小写字母及数字组成" onblur='passCheck(this.value)'/>
+								<p id="passTip"></p>
+							</div>
+							<div class="input-group">
+								<label for="password">重置密码</label>
+								<input type="password" id="enterPass" placeholder="请再次输入密码" onblur="checkPass(this.value)"/>
+								<p id="enPassTip"></p>
+							</div>
+							<div class="input-group">
+								<label for="code">验证码</label>
+								<input type="text" class="code" placeholder="请输入验证码" onblur="codeCheck(this.value)"/>
+								<div class="codeimg" >
+									<img src="images/codeimg1.jpg" alt="" id="codeimg" />
+									<a href="javascript:;" class="changeCode">换一张</a>
+								</div>
+								<p id="codeTip"></p>
+							</div>
+							<div class="input-group">
+								<label class="icheck">
+									<input type="checkbox" id="registerCheck"/>
+									<span></span>
+									已阅读并同意<a href="###">《LOTOPIA》用户协议</a>
+								</label>
+							</div>
+							<div class="input-group">
+								<input type="submit" value="注册" class="sub"/>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container">
+				<div class="copyright">
+					<span>版权所有：lotopia官方店  lotopia官网商城</span>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+</html>
+

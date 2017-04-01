@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/login.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
+		<script type="text/javascript" src="js/login.js"></script>
+	</head>
+	<body onload="loadCookie()">
+		<div class="header">
+			<div class="top">
+				<div class="container">
+					<div class="left select_address">
+						<span>送至:</span>
+						<select>
+							<option>广州</option>
+							<option>深圳</option>
+							<option>广州</option>
+						</select>
+					</div>
+					<div class="right">
+						<p>您好！欢迎来到LOTOPA</p>
+						<ul class="index-enter">
+							<li><a href="login.html" class="line active" id="userLogin">请登录</a></li>
+							<li><a href="register.html" class="line" id="userRegister">免费注册</a></li>
+							<li><a href="###" class="line">我的收藏</a></li>
+							<li><a href="###" class="triggle">关注LOTOPA</a>
+								<dl>
+									<dd><a href="###">关注LOTOPA</a></dd>
+									<dd><a href="###">关注LOTOPA</a></dd>
+									<dd><a href="###">关注LOTOPA</a></dd>
+								</dl>
+							</li>
+							<li><a href="###" class="triggle">客户服务</a>
+								<dl>
+									<dd><a href="###">客户服务</a></dd>
+									<dd><a href="###">客户服务</a></dd>
+									<dd><a href="###">客户服务</a></dd>
+								</dl>
+							</li>
+							<li><a href="###" class="triggle">网站导航</a>
+								<dl>
+									<dd><a href="###">网站导航</a></dd>
+									<dd><a href="###">网站导航</a></dd>
+									<dd><a href="###">网站导航</a></dd>
+								</dl> 
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="center">
+				<div class="container ov">
+					<div class="logo">
+						<a href="index.html"><img src="images/png/logo.png" title="欢迎来到LOTOPA" alt="LOTOPA"/></a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content">
+			<div class="container ov">
+				<div class="login">
+					<div class="title">
+						<h1>会员登录</h1>
+						<a href="register.html" class="register">免费注册</a>
+					</div>
+					<div class="box">
+						<form action="javascript:checkLogin();" method="get">
+							<div class="input-group">
+								<label for="userName">账户</label>
+								<input type="text" id='userName' onblur='userCheck(this.value)'/>
+								<p id="userTip"></p>
+							</div>
+							<div class="input-group">
+								<label for="password">密码</label>
+								<input type="password" id='password' onblur='passCheck(this.value)'/>
+								<p id="passTip"></p>
+							</div>
+							<div class="input-group">
+								<label for="code">验证码</label>
+								<input type="text" class="code" id="code" onblur='codeCheck(this.value)' />
+								<div class="codeimg"><img src="images/codeimg1.jpg" alt="" id='codeimg'/></div>
+								<p id="codeTip"></p>
+							</div>
+							<div class="input-group">
+								<label class="icheck">
+									<input type="checkbox" id="isAutoLogin">
+									<span></span>
+									自动登录
+								</label>
+								<a href="###" class="forget">忘记密码</a>
+							</div>
+							<div class="input-group">
+								<input type="submit" value="登录" class="sub"/>
+							</div>
+						</form>
+						<div class="operate">
+							<span>合作网站帐号登录</span>
+						</div>
+						<ul class="operate-login">
+							<li><a href="###"><img src="images/png/qq.png"/></a></li>
+							<li><a href="###"><img src="images/png/wechat.png"/></a></li>
+							<li><a href="###"><img src="images/png/zhifubao.png"/></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="container">
+				<div class="copyright">
+					<span>版权所有：lotopia官方店  lotopia官网商城</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+

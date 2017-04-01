@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0}
+div{ width:100px; height:100px; border:1px solid #0F0; padding:30px}
+</style>
+</head>
+
+<body>
+<div class="div1">
+
+	<p>	DIV
+    </p>
+</div>
+
+<div class="div div1">
+
+	<p>	DIV
+    </p>
+</div>
+
+<div class="text div1">
+
+	<p>	DIV
+    </p>
+</div>
+
+<div class="html div1" value="6666">
+
+	<p>	DIV
+    </p>
+</div>
+<input class="val" type="text" value="gg">
+<script type="text/javascript" src="jquery-1.9.0.js"></script>
+<script>
+$(function(){
+	$('div').before('before').before('<b>before</b>').after('after').after('<b>after</b>').prepend('prepend').prepend('<b>prepend</b>').append('<b>append</b>');
+	
+	$('<del>del</del>').prependTo('.div1');
+	//$('div').prepend($('div').clone());
+	//$('div').empty();
+	//$('div').remove();
+	//$('div').replaceWith('<b>gg</b>');//替换整个元素
+	//$('div').html('<b>gg</b>');//替换元素里面内容 没有参数时 获取元素里面的内容
+	//alert($('div').html());
+	//$('p').unwrap();
+	//$('p').wrap('<div></div>');
+	$('p').wrapInner('<div></div>');
+	//alert($('.div').hasClass('div1'));
+	$('.div').toggleClass('div111');
+	console.log($('.text').text());//获取值时里面的内容 标签会删除
+	console.log($('.html').html());//获取值时，会同时获取里面的标签
+	
+	$('.text').text('<b>gg</b>')//直接把标签当初字符串输出
+	$('.html').html('<b>gg</b>')//会解析标签
+	alert($('.val').val())
+	alert($('.html').attr('value','999'))
+	$('.html').height('3000px').width('3000px')
+});
+</script>
+</body>
+</html>

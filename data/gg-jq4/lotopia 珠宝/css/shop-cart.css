@@ -1,0 +1,70 @@
+.header .center .find{float: right;}
+.content{padding-bottom: 56px;}
+.content .min-title{padding-left: 30px; overflow: hidden; padding-bottom: 3px;}
+.content .min-title span a,span i{color: #000; font-family: '宋体'; font-style: normal; font-size: 12px;}
+.content .min-title span {float: left; line-height: 17px;margin-right: 6px;}
+.content .shop-top{margin-top: 54px; margin-bottom: 100px;}
+.content .shop-top ul{text-align: center;}
+.content .shop-top ul li{display: inline-block; text-align: center;}
+.content .shop-top ul li p{font-size: 24px; color: #666666;}
+.content .shop-top ul li div{width:256px; border-top: 10px solid #666666;}
+.content .shop-top ul li div span{display: block; width:30px; background: #666666; height: 30px; margin: 0 auto; border-radius: 50%; line-height: 30px; color: #fff; font-family: "微软雅黑"; font-size: 18px; margin-top: -20px; text-align: center;} 
+.content .shop-top ul li.top-active p{color: #4D0398;}
+.content .shop-top ul li.top-active div{border-top:10px solid #4D0398;}
+.content .shop-top ul li.top-active div span{background: #4D0398;}
+.content .shop-cart .cart-top{ border-bottom: 1px solid #999999; font-size: 16px; overflow: hidden; width: 100%;}
+.content .shop-cart .check-div{width: 156px;  box-sizing: border-box;}
+.content .shop-cart .icheck{cursor: pointer; position: relative; font-size: 16px; color: #000000;}
+.content .shop-cart label.icheck input{visibility: hidden; width: 11px; height: 11px; margin-right: 7px;}
+.content .shop-cart label.icheck span{width: 13px; height: 13px; display: block; border: 1px solid #999; float: left; position: absolute; top: 4px;}
+.content .shop-cart label.icheck input:checked + span:after{content:""; display: block; width: 9px; height: 6px; border-left: 2px solid #000; border-bottom: 2px solid #000; transform: rotate(-45deg); position: absolute; top: 0px; left: 1px;}
+.content .shop-cart .cart-top .check-div{ padding-left: 24px;}
+.content .shop-cart .cart-top .check-div label.icheck input{margin-right: 7px;}
+.content .shop-cart .cart-top div{overflow: hidden; float: left; height: 30px;}
+.content .shop-cart .message-div{width: 224px; text-align: center;}
+.content .shop-cart .color-msg{width: 277px; text-align: center;}
+.content .shop-cart .price-div{width: 112px; text-align: center;}
+.content .shop-cart .number-div{width: 126px; text-align: center;}
+.content .shop-cart .total-div{width: 128px; text-align: center;}
+.content .shop-cart .operation-div{width: 115px; padding-left: 38px; text-align: center;}
+.content .shop-name{padding-left: 38px;}
+.content .shop-name label.icheck-div input{margin-right: 7px;}
+.content .shop ul li div{overflow: hidden; float: left; }
+.content .shop ul li{height: 120px; padding: 20px 0; box-sizing: border-box; border: 1px solid #999; margin-bottom: 20px;}
+.content .shop ul li:nth-last-child(1){margin-bottom: 8px;}
+.content .shop ul li .check-div label{float: left; margin-left: 24px;}
+.content .shop ul li .check-div label.icheck span{top: 31px;}
+.content .shop ul li .check-div label.icheck input{margin-right: 20px;}
+.content .shop ul li .check-div a{display: block; width: 80px; height: 80px; overflow: hidden;}
+.content .shop ul li .check-div img{display: block; width: 100%;}
+.content .shop ul li .message-div a{display: block; text-align: left; font-size:14px; color:#000; font-family: "微软雅黑";}
+.content .shop ul li div span{ font-size:14px; color:#000; font-family: "微软雅黑";}
+.content .shop .operation-div a{display: block; text-align: left; font-size: 14px;}
+.content .shop .number-div{margin-top: 4px;}  
+.content .shop .number-div span{cursor:pointer; display: inline-block; width: 15px; height: 19px; line-height: 19px; border: 1px solid #999; text-align: center; font-size: 18px;}  
+.content .shop .number-div span.add{margin-left: -4px;}  
+.content .shop .number-div input{display: inline-block; width: 45px; height: 19px; border-left: none; border-right: none; border-top: 1px solid #999; border-bottom: 1px solid #999; text-align: center; margin-left: -4px; vertical-align: top;}  
+
+.content .cart-bottom{background: #e0e0e0; overflow: hidden;}
+.content .cart-bottom .bottom-left{float: left;}
+.content .cart-bottom .check{padding-left: 24px; display: inline-block; margin-right: 53px;}
+.content .cart-bottom .check label.icheck input{margin-right: 7px; }
+.content .cart-bottom a{font-size: 16px; color: #000000; margin-right: 53px; line-height: 53px;}
+.content .cart-bottom .bottom-right{float: right;}
+.content .cart-bottom .bottom-right .span{display: inline-block;}
+.content .cart-bottom .bottom-right span{font-size: 16px; line-height: 53px;}
+.content .cart-bottom .bottom-right span.check-num{font-size: 20px; color:#ff0000;}
+.content .cart-bottom .bottom-right span.total-num{font-size: 24px; color:#ff0000;}
+.content .cart-bottom .bottom-right span.maxtotal{font-size: 24px; color:#ff0000;}
+.content .cart-bottom .bottom-right .btn{font-size: 22px;  line-height: 53px; color:#fff; background: #7a14e2; font-family: "微软雅黑"; width: 130px; border: none; margin-left: 14px;}
+
+
+
+
+
+
+
+
+
+
+

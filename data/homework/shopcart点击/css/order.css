@@ -1,0 +1,62 @@
+.content{padding-top: 24px; margin-bottom: 62px;}
+.content .div{padding-top: 12px; overflow: hidden; font-family:"微软雅黑";}
+.content .title{padding-left: 30px; padding-top:30px; float: left;}
+.content .title li{display: inline-block;}
+.content .title li a{font-family:"微软雅黑"; font-size: 16px; color: #000;}
+.content .title li span{font-size: 16px; color: #7a14e2; margin: 0 15px;}
+.content .rabbin{font-family:"微软雅黑"; font-size: 14px; color: #666666; display: block; float: right; background: url(../images/png/rabbin.png) no-repeat left; width: 90px; text-align: right; margin-top: 35px;}
+
+.content .order{padding-left: 17px;}
+.content .search{padding-top: 65px;}
+.content .text{width: 227px; padding: 5px; height: 30px; font-family:"微软雅黑";}
+.content .btn{margin-left: -4px; width: 72px; height: 30px; vertical-align: bottom; background: transparent; border: 1px solid #999999; font-size:14px; font-family:"微软雅黑";}
+.content .my-order{padding-top: 26px;}
+.content .my-order .order-header{border: 1px solid #cccccc; overflow: hidden;}
+.content .my-order .order-header li{font-weight:bold; display: block; float: left; font-size: 14px; text-align: center; box-sizing: border-box; line-height: 47px;}
+.content .my-order .order-header li:nth-child(1){text-align:left; width: 407px; padding-left: 56px; }
+.content .my-order .order-header li:nth-child(2){width: 182px;}
+.content .my-order .order-header li:nth-child(3){width: 116px;}
+.content .my-order .order-header li:nth-child(4){width: 116px;}
+.content .my-order .order-header li:nth-child(5){width: 116px;}
+
+
+.content .my-order .list-top{padding-left:30px; margin-top:10px; height: 38px; background: #ccc;}
+.content .my-order .list-top a{display: block; float: right; background: url(../images/png/rabbinc.png) no-repeat center; width: 13px; height: 38px; margin-right: 17px;}
+.content .my-order .list-top .span{font-size: 14px; margin-left: 50px;}
+.content .my-order .order-body label.icheck{cursor: pointer; font-size: 14px; position: relative; width: 100%; text-align: left; padding-top: 6px; position: relative;}
+.content .my-order .order-body .icheck input{visibility: hidden; }
+.content .my-order .order-body .icheck span{width: 10px; height: 10px; display: block; border: 1px solid #000; float: left; position: absolute; top: 10px;}
+.content .my-order .order-body label.icheck input:checked + span:after{content:""; display: block; width: 6px; height: 4px; border-left: 2px solid #000; border-bottom: 2px solid #000; transform: rotate(-45deg); position:absolute; top: 1px; left: 1px;}
+.content .my-order .order-body label.icheck p{display: inline-block; font-size: 14px; line-height: 38px; font-weight: bold;}
+.content .my-order .order-body .order-details{border: 1px solid #cccccc;height: 119px; box-sizing: border-box;}
+.content .my-order .order-body .order-details>div{padding-top:18px; height: 119px; float: left; text-align: center;box-sizing: border-box;}
+.content .my-order .order-body .order-details>div:nth-child(1){padding-left: 30px;text-align:left; width: 407px;}
+.content .my-order .order-body .order-details>div:nth-child(2){width: 182px;}
+.content .my-order .order-body .order-details>div:nth-child(3){width: 116px;}
+.content .my-order .order-body .order-details>div:nth-child(4){width: 116px;}
+.content .my-order .order-body .order-details>div:nth-child(5){width: 116px;}
+.content .my-order .order-body .order-details>div p{font-weight: normal; font-size:12px; line-height: 12px; padding-bottom: 7px;}
+.content .my-order .order-body .order-details>div a{font-weight: normal; font-size:12px; display: block; line-height: 30px; color:#000;}
+.content .my-order .order-body .order-details div .pic{display: block; float: left; border: 2px solid #999; height: 75px;}
+.content .my-order .order-body .order-details div .pro-title{overflow: hidden; text-overflow: ellipsis; padding-left: 10px;}
+.content .my-order .order-body .order-details div .pro-title a{font-size:12px; font-family:"微软雅黑"; color:#000; font-weight: bold; display: block; line-height: 22px;}
+.content .my-order .order-body .order-details div p.price{color:#ff0000; font-size:16px; padding-bottom: 14px;}
+.content .my-order .order-body .order-details div p.express{color:#666666;}
+.content .my-order .order-body .order-details>div:nth-last-child(1) a:nth-child(1){margin-top:-9px;}
+.content .my-order .order-body .order-details div:nth-child(3){border-left: 1px solid #cccccc;}
+.content .my-order .order-body .order-details div:nth-child(4){border-left: 1px solid #cccccc;}
+.content .my-order .order-body .order-details div:nth-child(5){border-left: 1px solid #cccccc;}
+
+
+.content .order-detail{padding-left: 45px;}
+.content .order-detail h1{font-size:20px; color: #010101; line-height: 42px; margin-top: 25px; clear: both;}
+.content .order-detail p{font-size:12px; line-height: 22px; color: #989898;}
+.content .order-detail .user-message,.order-message{font-size: 14px; color: #000; padding-left: 40px;}
+.content .order-detail .user-message>div{width: 280px; float: left;}
+.content .order-detail .order-message>div{width: 280px; float: left;}
+.content .order-detail .order-message{margin-bottom:60px;}
+.content .order-detail .ex-details ul{padding-left: 40px;}
+.content .order-detail .ex-details li{font-size:14px; line-height: 38px;}
+
+
+

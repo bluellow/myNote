@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+*{margin:0;padding:0}
+ul{list-style:none}
+.wrap{width:397px;overflow:hidden}
+.wrap .list{width:400px;height:100px;}
+.wrap .list li{width:98px;height:98px;border:1px solid red;float:left;text-align:center;line-height:100px; font-weight:900;}
+.wrap .list li.one{border-right:none}
+
+.wrap .list1{width:100px;height:100px;float:left}
+.wrap .list1 li{width:98px;height:99px;border:1px solid red;text-align:center;line-height:100px; font-weight:900;float:left;border-top:none}
+
+.wrap .button{width:197px;height:200px; cursor:pointer;background:#F96;outline:none}
+
+.wrap .list2{width:97px;height:100px;float:right}
+.wrap .list2 li{width:98px;height:99px;border:1px solid red;text-align:center;line-height:100px; font-weight:900;float:right;border-top:none}
+
+.wrap .list3{width:400px;height:100px;}
+.wrap .list3 li{width:98px;height:98px;border:1px solid red;float:left;text-align:center;line-height:100px; font-weight:900}
+.wrap .list3 li.one{border-right:none}
+.wrap .list3 #two{height:99px;border-top:none}
+.wrap .list3 #sss{height:99px;border-top:none}
+</style>
+</head>
+
+<body>
+<div class="wrap">
+    <ul class="list">
+        <li class="one">耳机</li>
+        <li class="one">平板电脑</li>
+        <li class="one">耐克</li>
+        <li>感谢参与</li>
+    </ul>
+    
+    <ul class="list1">
+        <li>童衣</li>
+        <li>鞋子</li>
+    </ul>
+    <button type="button" class="button">免费抽奖</button>
+    <ul class="list2">
+        <li>耳机</li>
+        <li>童衣</li>
+    </ul>
+    <ul class="list3">
+        <li class="one" id="two">感谢参与</li>
+        <li class="one">耐克</li>
+        <li class="one">数码相机</li>
+        <li id="sss">手机</li>
+    </ul>
+</div>
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script>
+	$(document).ready(function(){
+	    //4个Ul
+        var $ul = $($(".wrap").find("ul"));
+        //多少个ul
+        var ulNum = $ul.length;
+        var i = 0; //用来遍历UL
+        var j = 0;  //用来遍历li
+        var curIndex = 11;//从自后一个开始
+        var timer = 0;
+        var arrs = [];//里面存放jquery li对象
+        var isStart = false;
+
+
+        i = 0;
+        liNum = $ul.eq(i).find("li").length;
+        // liNum = 4
+        for(j=0;j <liNum;j++){
+//            j = 0~3
+            arrs.push($ul.eq(i).find("li").eq(j))
+        }
+
+
+        i = 2;
+        liNum = $ul.eq(i).find("li").length;
+        for(j=0;j <liNum;j++){
+            //list2    j= 0~1
+            arrs.push($ul.eq(i).find("li").eq(j))
+        }
+
+
+        i = 3;
+        liNum = $ul.eq(i).find("li").length;
+        for(j=liNum-1; j>=0; j--){
+            arrs.push($ul.eq(i).find("li").eq(j))
+        }
+
+
+        i = 1;
+        liNum = $ul.eq(i).find("li").length;
+        for(j=liNum-1;j>=0;j--){
+            arrs.push($ul.eq(i).find("li").eq(j))
+        }
+
+        //毫秒
+        var beginSpeed = 200;
+        var maxNum     = 1000;
+        var rollSpeed  = 0;
+        var speed      = beginSpeed;
+        var countTiem  = 4000;
+        var timerSpeed = 10;
+
+//        每次改变颜色时间: 
+
+        // setInterval(changeColor,0.01s);
+        // 0.01s 
+
+        // + 200
+        // 要多少时间超过或者等于1000
+
+        // 0.05s 改变一次颜色
+
+        function changeColor(){
+            rollSpeed = rollSpeed + speed;
+            if(rollSpeed >= maxNum){
+
+                rollSpeed = 0;
+                curIndex++;
+                if(curIndex >= arrs.length){
+                    curIndex = 0;
+                }
+                // 将当前的改颜色
+                arrs[curIndex].css({"background":"yellow"});
+
+                //改前一个颜色
+                if(curIndex - 1 < 0){
+                    arrs[arrs.length - 1].css({"background":"white"});
+                }else{
+                    arrs[curIndex - 1].css({"background":"white"});
+                }
+            }
+        }
+
+        //减速
+        var timer2 = 0;
+        function subSpeed(){
+            timer2 = setInterval(function(){
+                console.log(speed)
+                if(speed > 1) {
+                    speed -=5
+                }else{
+                    speed =1;
+                }
+            },100)
+        }
+
+        //开始
+        function start(){
+
+            timer = setInterval(changeColor,timerSpeed);
+        }
+
+
+        //重置
+        function reset(self){
+            isStart = false;
+            timer = 0;
+            timer2 =0;
+
+            self.attr("disabled", false);
+            speed = beginSpeed;
+            curIndex =11;
+        }
+
+
+        $(".button").click(function(){
+            var self = $(this)
+            if(timer == 0){
+                start();
+            }else{
+                console.log("aaa");
+                //禁用btn
+                self.attr("disabled", true);
+                //减速
+                subSpeed();
+                
+                setTimeout(function(){  //倒计时函数seTimeout
+                    clearInterval(timer);
+                    clearInterval(timer2);
+
+                    alert("你中了"+curIndex+"个 ："+arrs[curIndex].text());
+
+                    reset(self);
+                },5000)
+            }
+        });
+    });
+</script>
+</body>
+</html>

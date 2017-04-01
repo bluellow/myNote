@@ -1,0 +1,24 @@
+body{background: url(../images/loginbg.jpg);}
+.login{width: 388px; float: right; font-family: "微软雅黑"; padding-top: 76px; padding-right: 52px; padding-bottom: 212px;}
+.login .title{margin-bottom: 20px; overflow: hidden;}
+.login h1{font-size:26px; float: left; line-height: 26px;}
+.login .register{font-size:12px; float: right; margin-top: 7px;}
+.login .box{width: 388px; height: 432px; box-shadow: 5px 10px 12px #7d6165; background: #fff; padding-top:60px; box-sizing: border-box; border-top:1px solid #999; border-left: 1px solid #999;}
+.login .box .input-group{display: block; margin-bottom: 10px; padding-left: 40px; clear: both; overflow: hidden;}
+.login .box .input-group label{padding-right: 8px; font-family: "宋体"; box-sizing: border-box; display: block; width: 48px; text-align: right; float: left; line-height: 32px;}
+.login .box .input-group input{float: left; box-sizing:border-box; width: 236px; height: 32px; line-height: 32px; padding:0 5px; border: 1px solid #999;}
+.login .box .input-group p{line-height: 32px; overflow: hidden; padding-left: 2px;}
+.login .box .input-group input.code{width: 64px; float: left; margin-right: 8px;}
+.login .box .input-group .codeimg{cursor:pointer; height: 32px; overflow: hidden; float: left;}
+.login .box .input-group .codeimg img{border: 1px solid #999; overflow: hidden; height: 30px;}
+.login .box .input-group label.icheck{cursor:pointer; margin-top:-8px; font-size: 12px; position: relative; text-align: left; padding-left: 48px; width: 138px;}
+.login .box .input-group label.icheck input{margin-right: 5px; visibility: hidden; width: 11px; height: 11px;}
+.login .box .input-group label.icheck span{width: 10px; height: 10px; display: block; border: 1px solid #999; float: left; position: absolute; top: 10px;}
+.login .box .input-group label.icheck input:checked + span:after{content:""; display: block; width: 6px; height: 4px; border-left: 2px solid #000; border-bottom: 2px solid #000; transform: rotate(-45deg); position: absolute; top: 1px; left: 1px;}
+.login .box .input-group .forget{line-height: 38px; float: right; margin-right: 64px; margin-top:-8px; color:#000;}
+.login .box .input-group .sub{cursor: pointer; font-family: "微软雅黑"; width: 294px; font-size: 24px; line-height: 40px; height: 40px; color: #fff; text-align: center; background: #4d0398; border: none;}
+.login .operate{border-top: 1px solid #000; height: 12px; width: 294px; margin-top:28px; margin-left: 40px;} 
+.login .operate span{display: block; background: #fff; width: 108px; margin: 0 auto;margin-top:-12px; text-align: center;}
+.login .operate-login {padding-left: 25px; overflow: hidden; margin-top:25px;}
+.login .operate-login li{float:left;margin: 0 15px;}
+.login .operate-login li img{display:block; }

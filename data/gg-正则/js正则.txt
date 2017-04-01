@@ -1,0 +1,33 @@
+1） test  检查指定的字符串是否存在
+var data = "123123″;
+var reCat = /123/gi;
+alert(reCat.test(data));  //true
+//检查字符是否存在  g 继续往下走  i 不区分大小写
+2） exec 返回查询值
+var data = "123123,213,12312,312,3,Cat,cat,dsfsdfs,";
+var reCat = /cat/i;
+alert(reCat.exec(data));  //Cat
+3）match  得到查询数组
+var data = "123123,213,12312,312,3,Cat,cat,dsfsdfs,";
+var reCat = /cat/gi;
+var arrMactches = data.match(reCat)
+for (var i=0;i < arrMactches.length ; i++)
+{
+alert(arrMactches[i]);   //Cat  cat
+}
+4） search  返回搜索位置  类似于indexof
+var data = "123123,213,12312,312,3,Cat,cat,dsfsdfs,";
+var reCat = /cat/gi;
+alert(data.search(reCat));  //23
+5） replace  替换字符  利用正则替换
+var data = "123123,213,12312,312,3,Cat,cat,dsfsdfs,";
+var reCat = /cat/gi;
+alert(data.replace(reCat,"libinqq"));
+6）split   利用正则分割数组
+var data = "123123,213,12312,312,3,Cat,cat,dsfsdfs,";
+var reCat = /\,/;
+var arrdata = data.split(reCat);
+for (var i = 0; i < arrdata.length; i++)
+{
+alert(arrdata[i]);
+}

@@ -1,6 +1,12 @@
 {
   "content": [
     [
+      {"name":"作业"},
+      {"name": "抽奖", "url":"data/homework/smallPro/抽奖/抽奖.html"},
+      {"name": "查看图片", "url":"data/homework/smallPro/preview/index.html"},
+      {"name": "购物车", "url":"data/homework/shopcart点击/shop-cart1.html"}
+    ],
+    [
       {"name":"第一天"},
       {"name": "你的名字", "url": "data/你的名字/index.html"}
     ],

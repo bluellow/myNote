@@ -1,0 +1,67 @@
+.header .center .find{float: right;}
+.content{padding-bottom: 117px; overflow: hidden;}
+.content .min-title{padding-left: 30px; overflow: hidden; padding-bottom: 3px;}
+.content .min-title span a,span i{color: #000; font-family: '宋体'; font-style: normal; font-size: 12px;}
+.content .min-title span{float: left; line-height: 17px;margin-right: 6px;}
+.content .shop-top{margin-top: 54px; margin-bottom: 14px;}
+.content .shop-top .top-ul{text-align: center;}
+.content .shop-top .top-ul li{display: inline-block; text-align: center;}
+.content .shop-top .top-ul li p{font-size: 24px; color: #666666;}
+.content .shop-top .top-ul li div{width:256px; border-top: 10px solid #666666;}
+.content .shop-top .top-ul li div span{display: block; width:30px; background: #666666; height: 30px; margin: 0 auto; border-radius: 50%; line-height: 30px; color: #fff; font-family: "微软雅黑"; font-size: 18px; margin-top: -20px; text-align: center;} 
+.content .shop-top .top-ul li.top-active p{color: #4D0398;}
+.content .shop-top .top-ul li.top-active div{border-top:10px solid #4D0398;}
+.content .shop-top .top-ul li.top-active div span{background: #4D0398;}
+.content .shop-top h1{font-size: 26px; font-weight: normal; line-height: 40px; padding-left: 4px;}
+.content .shop-top>p{font-size: 16px;padding-left: 26px;}
+.content .shop-top .user-address{overflow: hidden;}
+.content .shop-top .user-address li{box-sizing: border-box; width: 216px; float: left; margin-right: 30px; overflow: hidden;}
+.content .shop-top .user-address li:nth-last-child(1){margin-right: 0;}
+.content .shop-top .user-address li div{box-sizing: border-box; width: 216px; height: 140px; border: 2px dashed #999; padding-left: 16px; background: url(../images/png/comfire-right.png) no-repeat right bottom;}
+.content .shop-top .user-address li div .user-name{line-height: 40px; font-size: 16px;}
+.content .shop-top .user-address li div .user-phone{font-size: 14px;}
+.content .shop-top .user-address li div p{font-size: 12px;}
+.content .shop-top .user-address li div.on{border: 2px dashed #7A14E2; background: url(../images/png/comfire-rightc.png) no-repeat right bottom;}
+.content .shop-top .user-address li a{color: #999; margin-right: 8px;}
+.content .shop-top .add-address{margin-top:20px; cursor: pointer; color:#000; font-size:14px; clear: both; border: 1px solid #999; display: block; text-align: center; width: 96px; line-height: 30px;}
+
+ 
+.content .shop-cart>p{font-size: 16px;padding-left: 26px; line-height: 60px;}
+.content .shop-cart .cart-top{overflow: hidden; background: #999; line-height: 40px;}
+.content .shop-cart .cart-top span{color:#000000; font-size: 14px; display: block; float: left; box-sizing: border-box;} 
+.content .shop-cart .cart-top span:nth-child(1){width: 533px; padding-left:50px ;}
+.content .shop-cart .cart-top span:nth-child(2){width: 187px; padding-left:20px ;}
+.content .shop-cart .cart-top span:nth-child(3){width: 166px; padding-left:5px ;}
+.content .shop-cart .cart-top span:nth-child(4){width: 60px; text-align: center;}
+.content .shop-cart .cart-top span:nth-child(5){width: 250px; text-align: center;}
+
+.content .shop-cart .shop ul li{padding: 30px 0; box-sizing: border-box; height: 122px; border-style: solid; border-color: #999; border-width: 0 1px 1px 1px;}
+.content .shop-cart .shop ul li div{float: left;}
+.content .shop-cart .shop ul li div a{display: block;}
+.content .shop-cart .shop ul li .pro-img{width: 126px;}
+.content .shop-cart .shop ul li .pro-img a{width: 62px; height: 60px; margin: 0 auto;}
+.content .shop-cart .shop ul li .pro-img img{display: block; width: 100%;}
+.content .shop-cart .shop ul li .pro-title{width: 407px;}
+.content .shop-cart .shop ul li .pro-title a{color: #000; width: 407;}
+.content .shop-cart .shop ul li .color-div{width: 187px;}
+.content .shop-cart .shop ul li .price-div{width: 166px; }
+.content .shop-cart .shop ul li .number-div{width: 60px; text-align: center;}
+.content .shop-cart .shop ul li .total-div{width: 250px; text-align: center;}
+.content .shop-cart .shop ul li span{line-height: 55px; font-size: 14px;}
+.content .shop-cart .shop ul li .total-div span{font-size: 20px; color: #7A14E2;}
+
+.content .cart-bottom{margin-bottom: 8px; line-height: 46px; border-style: solid; border-color: #999; border-width: 0 1px 1px 1px; overflow: hidden; clear: both;}
+.content .cart-bottom .bottom-right{float: right;}
+.content .cart-bottom .bottom-right span{font-size: 12px; display: block; float: left;}
+.content .cart-bottom .bottom-right span:nth-child(1){width: 60px; text-align: center;}
+.content .cart-bottom .bottom-right span:nth-child(2){width: 250px; text-align: center;}
+.content .shop-bottom{float: right;}
+.content .shop-bottom p{font-size: 30px; line-height: 85px;}
+.content .shop-bottom p span{color: #7A14E2;}
+.content .shop-bottom .btn{font-size: 24px;  line-height: 48px; color:#fff; background: #7a14e2; font-family: "微软雅黑"; width: 148px; border: none; float: right;}
+
+
+
+
+
+

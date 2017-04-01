@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看图片</title>
+    <style>
+        *{margin: 0;padding: 0;}
+        a{text-decoration: none;}
+        ul,ol{list-style: none;}
+        img{display: block;}
+        .floatfix{zoom:1}
+        .floatfix:after{
+            content: "";
+            display: block;
+            clear:both;
+            visibility: hidden;
+            height: 0;
+            line-height:0;
+        }
+
+        #preview{width: 360px;margin: 0 auto;}
+        #preview .bigpic{width: 360px;height: 360px;margin-bottom: 10px;}
+        #preview .list_wrap{width: 360px;height: 100px;overflow: hidden;}
+        #preview .list_wrap ul{width: 6000px;}
+        #preview .list_wrap ul li{float:left;width: 100px;height: 100px;margin-right: 30px;}
+        #preview .list_wrap ul li img{width: 100px;height: 100px;}
+        #preview .btn{display:none;position: relative;top: -100px;z-index: 100;width: 360px;}
+        #preview .btn a{width: 20px;height: 100px;text-align: center;line-height: 100px;background: greenyellow;}
+        #preview .btn a.prev{float: left;}
+        #preview .btn a.next{float: right;}
+    </style>
+</head>
+<body>
+    <div id="preview">
+        <img class="bigpic" src="img/timg1.jpg" alt="">
+        <div class="list_wrap">
+            <ul class="clearfix">
+                <li><img src="img/timg1.jpg" alt=""></li>
+                <li><img src="img/timg2.jpg" alt=""></li>
+                <li><img src="img/timg3.jpg" alt=""></li>
+                <li><img src="img/timg4.jpg" alt=""></li>
+                <li><img src="img/timg5.jpg" alt=""></li>
+                <li><img src="img/timg6.jpg" alt=""></li>
+                <li><img src="img/timg7.jpg" alt=""></li>
+                <li><img src="img/timg8.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="btn">
+            <a class="prev" href="javascript:void(0);">&lt;</a>
+            <a class="next"href="javascript:void(0);">&gt;</a>
+        </div>
+    </div>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var offsetX = $("#preview .list_wrap ul li").eq(0).outerWidth(true);
+            var $ul = $("#preview .list_wrap ul");
+            var speed = 300;
+            var timer = 0;
+            var autoSpeed = 1000;
+
+            $ul.append($("#preview .list_wrap ul li").clone())
+
+            //显示图片
+            function showPic(msg){
+                var path = msg || $ul.find("li:nth-child(2) img").attr("src");
+                console.log(path)
+                $("#preview").children(".bigpic").attr({"src":path});
+            }
+
+            //图片点击
+            $ul.find("li img").click(function(){
+                var self = $(this);
+                showPic(self.attr("src"))
+            })
+
+
+            //右
+            $("#preview .btn a.next").click(function() {
+                var $first = $ul.children("li:first");
+                $first.animate({"marginLeft":-offsetX + "px"},speed,function(){
+                    $first.css({"margin-left":"0"}).appendTo($ul);
+                    showPic();
+                })
+            });
+
+            //左
+            $("#preview .btn a.prev").click(function(){
+                var $last = $ul.children("li:last");
+                $last.css({"margin-left":-offsetX + "px"}).prependTo($ul).animate({"marginLeft":0},speed,function(){
+                    showPic();
+                });
+
+            })
+
+            //autoplay
+            function autoplay(){
+                timer = setInterval(function(){
+                    $("#preview .btn a.next").click();
+                },autoSpeed);
+            }
+
+
+            $("#preview").mouseenter(function(){
+                clearInterval(timer);
+                timer = 0;
+                $("#preview").find(".btn").show();
+            }).mouseleave(function(){
+                autoplay();
+                $("#preview").find(".btn").hide();
+            });
+
+        });
+    </script>
+</body>
+</html>

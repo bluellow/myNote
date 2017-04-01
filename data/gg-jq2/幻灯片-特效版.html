@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+
+<style>
+*{margin:0;padding:0}
+.wrap{width:500px; margin:50px auto;position:relative;overflow:hidden;}
+.wrap .bigpic{width:498px; height:400px;border:1px solid red;}
+.wrap .bigpic img{width:100%;height:100%;}
+.wrap .list{height:150px;width:300%;list-style:none;margin-top:20px;}
+.wrap .list li{float:left;width:150px;height:150px;margin-right:25px; position:relative}
+.wrap .list li img{width:100%; height:100%;}
+.wrap .list li b{color: red;font-size: 60px;position: absolute;left: 60px;top: 34px;}
+.wrap .btn a{text-decoration:none; display:block; height:150px; width:50px;background:rgba(0,0,0,0.5);text-align:center;line-height:150px;position:absolute;bottom:0;color:#fff; font-size:36px;}
+.wrap .btn a.prev{left:0;}
+.wrap .btn a.next{right:0;}
+</style>
+<div class="wrap">
+	<div class="bigpic"><img src="img/product_01.jpg"/></div>
+	<ul class="list">
+    	<li><img src="img/product_01.jpg"/><b>1</b></li>
+        <li><img src="img/product_02.jpg"/><b>2</b></li>
+        <li><img src="img/product_03.jpg"/><b>3</b></li>        
+    </ul>
+    <div class="btn">
+    	<a href="javascript:void(0);" class="prev">&lt;</a>
+        <a href="javascript:void(0);" class="next">&gt;</a>
+    </div>
+
+</div>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script>
+
+$(function(){
+	$(".wrap .list li").clone(true).appendTo($(".wrap .list"))// 克隆li  添加到 ul 里面去
+	$('.next').click(function(){
+		//把第一张往后一位 第二张也往后移一位 第三张变成第一张
+		//吧第三张插入第一张前面 把第一张往后一位 第二张也往后移一位
+		//var last = $('.list li:last');
+		//console.log(last.html());
+		//$('.list li:first').before(last);
+		//动画版 
+		//1.首先把最后一位移到第一位前面 但我们要的效果是慢慢出来
+		//最后一位移到第一位后 不显示（margin-left -175px） 通过动画 慢慢出来 后面的人 自然 慢慢挤下去了
+		//2. 进入前  margin-left -175px 进入后 margin-left 0
+		var last = $('.list li:last');
+		last.css({'margin-left':'-175px'});
+		$('.list li:first').before(last);
+		$('.list li:first').animate({'margin-left':0},600);
+				
+		
+		var img = $('.list li:first').find('img').attr('src');
+		$('.bigpic img').attr('src',img);
+	});
+	
+	$('.prev').click(function(){		
+		//吧第一张插入第三后面 把第二张往前一位 第三张也往前移一位
+		//第一位就空的  2 3 自然往前挪 把第一位放到最后一位
+		//var first = $('.list li:first');
+		//console.log(last.html());
+	    //$('.list li:last').after(first);
+		//动画版 
+		//1.第一位慢慢退出 退出完后 跑去最后面继续排队
+		//2. 退出前  margin-left 0 退出后 margin-left -175px
+		var first = $('.list li:first');
+		first.animate({'margin-left':'-175px'},600,function(){
+			console.log('第一位跑去最后面');
+			$('.list li:last').after(first);
+			$('.list li:last').css('margin-left',0);
+		});
+		
+		var img = $('.list li:eq(1)').find('img').attr('src');
+		$('.bigpic img').attr('src',img);
+	});
+	$('.list li').click(function(){
+		var img = $(this).find('img').attr('src');
+		$('.bigpic img').attr('src',img);
+	});
+	var i = 0,time;
+	function auto_play(){
+		time = setInterval(function(){
+			console.log(i);
+			i++;
+			$('.prev').click();
+		},1000);
+		return time;
+	} 
+	
+	time = auto_play();
+	
+	$('.bigpic,.list,.prev,.next').mouseenter(function(){
+		clearInterval(time);
+	});
+	$('.bigpic,.list,.prev,.next').mouseleave(function(){
+		auto_play();
+	});
+})
+
+</script>
+</body>
+</html>
