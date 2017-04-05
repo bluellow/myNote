@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>产品中心</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/product.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+		<!-- <script type="text/javascript" src="js/common.js"></script> -->
+		<!-- <script type="text/javascript" src="js/product.js"></script> -->
+	</head>
+	<body>
+	<div id="gg"></div>
+		<div class="content">
+			<div class="container">
+				<div class="product">
+					<ul>
+						<li>
+							<div class="proimg">
+								<a href="pro_details.html"><img src="images/png/pro.png" /></a>
+							</div>
+							<div class="pro-message">
+								<span>￥<i class="price">599</i></span>
+								<p><a href="pro_details.html">吉蒂可爱水晶手链</a></p>
+								<a href="###">加入收藏</a>
+								<a href="###" class="proAdd">加入购物车</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="page">
+					<ul class="pagination">
+						<li><a href="###">&lt; 上一页</a></li>
+						<li><a href="index.php?p=1" class="active">1</a></li>
+						<li><a href="index.php?p=2">2</a></li>
+						<li><a href="index.php?p=3">3</a></li>
+						<li><a href="index.php?p=4">4</a></li>
+						<li><a href="index.php?p=5">5</a></li>
+						<li><a href="index.php?p=6">6</a></li>
+						<li><a href="#" class="on">...</a></li>
+						<li><a href="###">下一页 &gt;</a></li>
+					</ul>
+					<span>共100页</span>
+					<p>到第</p><input type="text" /><p>页</p>
+					<!-- <input type="button" value="确定"/> -->
+				</div>
+			</div>
+		</div>
+	</body>
+<script type="text/javascript">
+
+$(function() {
+$('.page a').click(function() {
+	var list = '';
+	$.ajax({
+		url: $(this).attr('href'),
+		type: 'get',
+		dataType: 'json',
+		data: {'gg': '6666','yy':9999},
+	})
+	.done(function(res) {
+		// alert(res.img)
+		console.log(res.img);
+		console.log(res.title);
+		console.log(res[0].title);
+		console.log(res.price);
+		for (var i = 0; i < res.length; i++) {
+			console.log(res[i].title);
+			list += '<li>';
+			list +=  '	<div class="proimg">';
+			list +=  '		<a href="pro_details.html"><img src=" ' + res[i].img + ' " /></a>';
+			list +=  '	</div>';
+			list +=  '	<div class="pro-message">';
+			list +=  '		<span>￥<i class="price"> ' + res[i].price + ' </i></span>';
+			list +=  '		<p><a href="pro_details.html">'+res[i].title+'</a></p>';
+			list +=  '		<a href="###">加入收藏</a>';
+			list +=  '		<a href="###" class="proAdd">加入购物车</a>';
+			list +=  '	</div>';
+			list +=  '</li>';
+		}
+		
+		$('.product ul').html(list);
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
+	return false;//阻止 a标签本来的默认跳转
+});
+	
+	// $.ajax({
+	// 	url: 'ajax 访问路径',
+	// 	type: '提交方式 默认get ，其他方式post',
+	// 	dataType: 'xml【XML 指可扩展标记语言】, json【json格式 对象】, script, or html【html文本】，text[文本] 默认智能选择', 语言之间交流 要有特定格式 json xml 装大数据的
+	// 	data: {下标: '键值'},//提交的数据
+	// 	success:function(){
+	// 		//成功回调函数
+	// 	},
+	// 	error:function(){
+	// 		//失败回调函数
+	// 	}
+	// })
+	// .done(function() {
+	// 	//成功回调函数
+	// 	console.log("success");
+	// })
+	// .fail(function() {
+	// 	//失败回调函数
+	// 	console.log("error");
+	// })
+	// .always(function() {
+	// 	//都会回调函数
+	// 	console.log("complete");
+	// });
+	// 
+	var li = '<li>';
+		li +='	<div class="proimg">';
+		li +='		<a href="pro_details.html"><img src="images/png/pro.png" /></a>';
+		li +='	</div>';
+		li +='	<div class="pro-message">';
+		li +='		<span>￥<i class="price">599</i></span>';
+		li +='		<p><a href="pro_details.html">吉蒂可爱水晶手链</a></p>';
+		li +='		<a href="###">加入收藏</a>';
+		li +='		<a href="###" class="proAdd">加入购物车</a>';
+		li +='	</div>';
+		li +='</li>';
+
+	//$('#gg').html(li+li+li+li+li)
+});
+</script>
+</html>
