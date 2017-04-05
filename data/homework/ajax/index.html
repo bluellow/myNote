@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin:0;padding: 0;}
+        #a2{display: block;width: 100px;height: 100px;background: greenyellow;border-radius: 10px;}
+    </style>
+</head>
+<body>
+    <a id="a1" href="javascript:void(0);">http://localhost/page.php</a>
+    <a id="a2" href="javascript:void(0);">aa</a>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#a2").click(function () {
+                var self = $(this)
+                $.ajax({
+                    type: "get",
+                    url: "page.php",
+                    data: "b2=1",
+                    dataType: 'json',
+                    success:function(respose){
+                        console.log(typeof respose)
+                        console.log(respose.bg1);
+                        self.css({"background":respose.bg1})
+                    },
+                    error:function(){
+                        console.log("error!");
+                    }
+                })
+            });
+
+            return false;
+        });
+    </script>
+</body>
+</html>
