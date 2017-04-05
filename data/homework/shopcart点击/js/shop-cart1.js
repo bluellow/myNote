@@ -29,7 +29,14 @@ $(function() {
 		var val = $(this).val();//拿到输入数量
 	
 		// $(this).val(parseInt(val));
-		
+
+		var pattern = /^[1-9]\d{0,2}$/;
+		if(pattern.test(val)){
+			val = Math.ceil(val);
+		}else{
+			val = 1;
+		}
+
 		val = Math.ceil(val);
 		$(this).val(val);
 
@@ -96,7 +103,7 @@ $(function() {
 	});
 
 	//传入li对象
-	//return allPriceStr字符串
+	//return allPriceStra字符串
 	function get_li_money(liObj,val){
 		//总价  = 单价 * 数量
 		//单价
@@ -158,6 +165,10 @@ $(function() {
 		$(this).parent().parent().remove();
 		get_total_price();
 	});
+
+
+
+
 
 	init_unit_total();
 	get_total_price();

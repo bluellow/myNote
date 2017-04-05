@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式和layer插件使用</title>
+
+
+    <style>
+        *{margin: 0;padding: 0;}
+        a{outline: none;text-decoration: none;}
+        ol,ul{list-style: none;}
+        input{outline: none;}
+
+        form{width: 500px;border: 1px solid lightgrey;margin: 40px auto 0;padding: 20px 50px;}
+        label{display: block;margin-bottom: 20px;}
+        label span{display:inline-block;width: 100px;text-align: right;}
+        label input{width: 300px;text-indent: 8px;height: 30px;font-size: 14px;line-height: 30px;font-family: 微软雅黑;}
+
+        input.m_error{border: 1px solid red;}
+        input.m_focus{border: 1px solid #40AFFE;}
+        input.m_success{border: 1px solid lawngreen;}
+
+        #registerCheck{width: auto;text-indent: 0;font-size: 0px;}
+        .xieyi {margin-bottom: 20px;padding-left: 50px;}
+        .xieyi a{display:inline-block;height:30px;line-height: 30px;}
+    </style>
+</head>
+<body>
+<form action="">
+    <label><span>用户名:</span><input id="username" name="username" type="text" placeholder="4-20位英文字母,数字或者下划线"></label>
+    <label><span>邮箱:</span><input id="email" name="email" type="text" placeholder="邮箱"></label>
+    <label><span>手机:</span><input id="mobilephone" name="mobilephone" type="text" placeholder="请输入11位的手机号码"></label>
+    <label><span>密码:</span><input id="pwd" name="pwd" type="password" placeholder="4-20位字母和数字组成"></label>
+    <label><span>确认密码:</span><input id="pwdagain" name="pwdagain" type="password"></label>
+    <label><span>验证:</span><input id="valicode" name="valicode" type="text" placeholder="1234"></label>
+    <div class="xieyi">
+        <input type="checkbox" id="registerCheck"/><a href="###">《LOTOPIA》用户协议</a>
+    </div>
+    <input id="sumbit" type="submit" value="提交">
+
+
+</form>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="layer/layer.js"></script>
+<script>
+    $(document).ready(function(){
+        //显示提示($obj必须有id 或者有 class)
+        function showTips($obj,tipsStr,colorStr){
+            var target = "";
+            var colorStr  = colorStr || "#78BA32";
+            target = $obj.attr("id");
+            if(target == undefined){
+                target = $obj.attr("class");
+                if(target == undefined){
+                    alert("showTips()，$obj必须带有id或者class");
+                    return;
+                }else{
+                    target = "." + target;
+                }
+            }else{
+                target = "#" + target;
+            }
+            var index = layer.tips(tipsStr, target, {
+                tips: [2,colorStr],
+                tipsMore:true,
+                time:5000,
+                area:['auto','30px']
+            });
+            //关闭之前的提示
+            layer.close($obj.attr('index'))
+            $obj.attr('index',index);
+        }
+
+
+        //检查输入是否为空
+        function checkIsBlank(arg){
+            var str = arg.str;
+            if(str==""){
+                return true;
+            }
+            return false;
+        }
+
+        //检查是否有汉字
+        function checkIsHanzi(arg){
+            var str = arg.str
+            var pattern = /[^\x00-\x80]/;
+            return pattern.test(str);
+        }
+
+        //检查长度是否太短
+        function checkIsShort(arg){
+            var str = arg.str;
+            var minLen = arg.minLen;
+            if(str.length < minLen){
+                return true;
+            }
+            return false;
+        }
+
+        //检查长度是否太长
+        function checkIsLong(arg) {
+            var str = arg.str;
+            var maxLen = arg.maxLen;
+            if(str.length > maxLen){
+                return true;
+            }
+            return false;
+        }
+
+        //检查是否不符合
+        function checkIsNotPattern(arg){
+            var str = arg.str;
+            var pattern = arg.pattern;
+            if(!pattern.test(str)){
+                return true
+            }
+            return false
+        }
+
+        //检查是否全数字
+        function checkIsNotAllNumber(arg){
+            var str = arg.str;
+            var pattern =/^[0-9]+$/
+            if(pattern.test(str)){
+                return true;
+            }
+            return false;
+        }
+
+        //检查是否非全字母
+        function checkIsNotAllLetter(arg){
+            var str = arg.str;
+            var pattern = /^[A-Za-z]+$/
+            if(pattern.test(str)){
+                return true;
+            }
+            return false;
+        }
+
+
+
+        //检查函数数组
+        var checkFunArr = [
+            {"fun":checkIsBlank,"errorStr":"不能为空!"},//0 检查是否空
+            {"fun":checkIsHanzi,"errorStr":"不能有汉字!"},//1 检查是否有汉字，有返回ture,否则FALSE
+            {"fun":checkIsShort,"errorStr":"长度太短!"},//2 检查字符串长度是否太短,太短返回true,否则false;
+            {"fun":checkIsLong,"errorStr":"长度太长!"}, //3 检查字符串长度是否太长，太长返回true,否则false;
+            {"fun":checkIsNotPattern,"errorStr":"请按要求输入!"},//4 检查字符串是否不符合正则公式，不符合返回true,否则返回false;
+            {"fun":checkIsNotAllNumber,"errorStr":"不能全数字!"},//5 检查字符串长度是否非全数字
+            {"fun":checkIsNotAllLetter,"errorStr":"不能全字母!"}//6 检查字符串长度是否非全字母
+        ];
+
+        //执行检查
+        function execCheck($obj,name,arr){
+            var i   = 0;
+            var len = arr.length;
+            for(i;i<len;i++){
+                var result = checkFunArr[arr[i].funNo].fun(arr[i]);
+                if(result){
+                    showTips($obj,arr[i].customStr || name + checkFunArr[arr[i].funNo].errorStr,"red");
+                    showErrorInput($obj);
+                    return
+                }
+            }
+            showSuccessInput($obj);
+            showTips($obj,name+"可用");
+        }
+
+        //inputError
+        function showErrorInput($input){
+            $input.removeClass("m_focus");
+            $input.removeClass("m_success");
+            $input.addClass("m_error")
+        }
+
+        function showFocusInput($input){
+            $input.addClass("m_focus");
+            $input.removeClass("m_success");
+            $input.removeClass("m_error")
+        }
+
+        function showSuccessInput($input){
+            $input.removeClass("m_focus");
+            $input.addClass("m_success");
+            $input.removeClass("m_error")
+        }
+
+        //用户名
+        $("#username").blur(function(){
+            var self = $(this);
+            var str = self.val().trim();
+            var arr=[
+                {"funNo":0,"str":str},
+                {"funNo":1,"str":str},
+                {"funNo":2,"str":str,"minLen":4},
+                {"funNo":3,"str":str,"maxLen":20},
+                {"funNo":4,"str":str,"pattern":/^[a-zA-Z0-9_]{4,20}$/,customStr:"用户名由4-20位英文字母,数字或者下划线组成"}
+            ]
+            execCheck(self,"用户名",arr);
+        }).focus(function(){
+            var self = $(this);
+            showFocusInput(self);
+        });
+
+        //邮箱
+        $("#email").blur(function(){
+            var self = $(this);
+            var str = self.val().trim();
+            var pattern = /^\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}$/;
+            var arr = [ {"funNo":4,"str":str,"pattern":pattern,customStr:"请输入正确的邮箱格式"}];
+            execCheck(self,"邮箱",arr);
+        }).focus(function(){
+            var self = $(this);
+            showFocusInput(self);
+        });
+
+        //手机
+        $("#mobilephone").blur(function(){
+            var self = $(this);
+            var str = self.val().trim();
+            var pattern = /^0?(13|14|15|18)[0-9]{9}$/;
+            var arr = [
+                {"funNo":0,"str":str},
+                {"funNo":2,"str":str,"minLen":11},
+                {"funNo":3,"str":str,"maxLen":11},
+                {"funNo":4,"str":str,"pattern":pattern,customStr:"请输入有效的手机号码"}
+            ];
+            execCheck(self,"手机号码",arr);
+        }).focus(function(){
+            var self = $(this);
+            showFocusInput(self);
+        });
+
+
+        //密码
+        $("#pwd").blur(function(){
+            var self = $(this);
+            var str = self.val().trim();
+            var pattern = /^[a-zA-Z0-9]{4,20}$/;
+            var arr = [
+                {"funNo":0,"str":str},
+                {"funNo":2,"str":str,"minLen":6},
+                {"funNo":3,"str":str,"maxLen":20},
+                {"funNo":5,"str":str},
+                {"funNo":6,"str":str},
+                {"funNo":4,"str":str,"pattern":pattern,customStr:"4-20位字母和数字组成，不能全字母或者数字，分大小写"}
+            ];
+            execCheck(self,"密码",arr);
+        }).focus(function(){
+            var self = $(this);
+            showFocusInput(self);
+        });
+
+        //再次密码
+        $("#pwdagain").blur(function(){
+            var self = $(this);
+            var str = self.val();
+            if($("pwd").val() == str){
+                showTips(self,"密码一致");
+                showSuccessInput(self);
+            }else{
+                showTips(self,"密码不一致","red");
+                showErrorInput(self);
+            }
+        }).focus(function(){
+            var self = $(this);
+            showFocusInput(self);
+        });
+
+        //验证码
+        $("#valicode").blur(function(){
+            var self = $(this);
+            var str = self.val().trim();
+            if(str != "1234"){
+                showTips(self,"验证码输入错误","red");
+                showErrorInput(self);
+            }else{
+                showSuccessInput(self);
+            }
+        }).focus(function(){
+            var self = $(this);
+            showFocusInput(self);
+        });
+
+        //提交
+        $('#sumbit').click(function() {
+            // log(633666)
+            if(!$('#registerCheck').is(':checked')){
+                showTips($('#registerCheck'),"请认真阅读协议","red");
+                return false;
+            }else{
+                layer.close($('#registerCheck').attr('index'))
+            }
+            if($('.m_success').length != 6){
+                showTips($('#registerCheck'),"请完善信息","red");
+                $('input').not('.m_error').not('.m_success').blur();
+                return false;
+            }
+            return false;
+        });
+
+
+    });
+
+
+</script>
+</body>
+</html>
