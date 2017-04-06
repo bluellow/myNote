@@ -160,15 +160,27 @@ $(function() {
 		}
 	}
 
-
 	$('.content .shop ul li').find(".delete").click(function () {
 		$(this).parent().parent().remove();
 		get_total_price();
+		
+		//添加全选标记
+		var $li   = $('.content .shop ul li');
+
+		var len = $li.length
+		var i =0;
+		var checkNum = 0;
+		for(i=0;i<len;i++){
+			if ($('.check-box').eq(i).is(':checked')) {
+				checkNum++;
+				if(checkNum == len ){
+					$('.all-check').prop('checked', true);
+				}
+			}else{
+				return;
+			}
+		}
 	});
-
-
-
-
 
 	init_unit_total();
 	get_total_price();
